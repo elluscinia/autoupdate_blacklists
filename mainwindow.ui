@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AutoUploadTMG</class>
+ <widget class="QMainWindow" name="AutoUploadTMG">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>441</width>
+    <height>776</height>
+   </rect>
+  </property>
+  <property name="font">
+   <font>
+    <family>MS Shell Dlg 2</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>AutoUploadTMG</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon_64.png</normaloff>icon_64.png</iconset>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>64</width>
+    <height>64</height>
+   </size>
+  </property>
+  <property name="toolButtonStyle">
+   <enum>Qt::ToolButtonFollowStyle</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <layout class="QGridLayout" name="gridLayout_3">
+    <item row="0" column="0">
+     <widget class="QGroupBox" name="param_area">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="title">
+       <string>Параметры</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="0" column="0">
+        <layout class="QVBoxLayout" name="verticalLayout_9">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="font">
+              <font>
+               <family>MS Shell Dlg 2</family>
+              </font>
+             </property>
+             <property name="toolTip">
+              <string>&lt;p&gt;Указанные префиксы будут стоять в начале списков с доменными именами. Удаление списков осуществляеться по начальному префиксу.&lt;/p&gt;</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>Префикс</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_4">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(255, 255, 255);</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QLineEdit" name="SHL_prefix">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(17, 74, 141);</string>
+             </property>
+             <property name="text">
+              <string>SHL</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="shallalist_check">
+             <property name="toolTip">
+              <string>&lt;p&gt;Обновление листов из shallalist.de&lt;/p&gt;</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>SHALLALIST</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <item>
+            <widget class="QLineEdit" name="DGNC_prefix">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(17, 74, 141);</string>
+             </property>
+             <property name="text">
+              <string>DGNC</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QCheckBox" name="digincore_check">
+             <property name="toolTip">
+              <string>&lt;p&gt;Обновление листов из digincore.org&lt;/p&gt;</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>DIGINCORE</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_3">
+           <item>
+            <widget class="QLabel" name="label_5">
+             <property name="toolTip">
+              <string>&lt;p&gt;Имя правила, куда будут добалены новые списки.&lt;/p&gt;</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>Имя правила</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="choice_ruleName">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="font">
+              <font>
+               <weight>50</weight>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="accessibleName">
+              <string extracomment="2"/>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">color: rgb(17, 74, 141);
+selection-color: rgb(17, 74, 141);
+gridline-color: rgb(17, 74, 141);</string>
+             </property>
+             <property name="editable">
+              <bool>true</bool>
+             </property>
+             <property name="currentText">
+              <string notr="true"/>
+             </property>
+             <property name="modelColumn">
+              <number>0</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="toolTip">
+              <string>&lt;p&gt;Желаемое количество доменных имён в каждом списке.&lt;/p&gt;</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>Количество адресов</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QSpinBox" name="part_size">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(17, 74, 141);</string>
+             </property>
+             <property name="inputMethodHints">
+              <set>Qt::ImhDigitsOnly|Qt::ImhMultiLine|Qt::ImhPreferNumbers</set>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+             <property name="minimum">
+              <number>5000</number>
+             </property>
+             <property name="maximum">
+              <number>600000</number>
+             </property>
+             <property name="value">
+              <number>500000</number>
+             </property>
+             <property name="displayIntegerBase">
+              <number>10</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout">
+           <item>
+            <widget class="QLabel" name="label_11">
+             <property name="toolTip">
+              <string>&lt;p&gt;Доменные имена, которые при парсинге будут исключены из списков чёрных листов.&lt;/p&gt;</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
+             <property name="text">
+              <string>Исключения для доменных имён</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPlainTextEdit" name="exceptionsDomains">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(17, 74, 141);</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QGroupBox" name="current_status">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="title">
+       <string>Текущий статус</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_6">
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <item>
+              <widget class="QLabel" name="label_6">
+               <property name="toolTip">
+                <string>&lt;p&gt;Созданные в памяти XML файлы, ожидающие импорта в TMG.&lt;/p&gt;</string>
+               </property>
+               <property name="text">
+                <string>Состояние памяти</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QListWidget" name="domainNameSetsMemory">
+               <property name="styleSheet">
+                <string notr="true">color: rgb(17, 74, 141);</string>
+               </property>
+               <property name="currentRow">
+                <number>-1</number>
+               </property>
+               <property name="sortingEnabled">
+                <bool>true</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QVBoxLayout" name="verticalLayout_2">
+             <item>
+              <widget class="QLabel" name="label_7">
+               <property name="toolTip">
+                <string>&lt;p&gt;Списки доменных имён, которые принадлежат правилу.&lt;/p&gt;</string>
+               </property>
+               <property name="text">
+                <string>Состояние правила в TMG</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QListWidget" name="domainNameSetsTMG">
+               <property name="styleSheet">
+                <string notr="true">color: rgb(17, 74, 141);</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_4">
+           <item>
+            <widget class="QLabel" name="label_8">
+             <property name="toolTip">
+              <string>&lt;p&gt;Лог операций.&lt;/p&gt;</string>
+             </property>
+             <property name="text">
+              <string>Операции</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QListWidget" name="operations">
+             <property name="styleSheet">
+              <string notr="true">color: rgb(17, 74, 141);</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout_7">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_6">
+           <item>
+            <widget class="QLabel" name="procedure_name">
+             <property name="text">
+              <string>Скачивание файла</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="text">
+              <string>Импорт в TMG</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_7">
+           <item>
+            <widget class="QProgressBar" name="progressBar_download">
+             <property name="palette">
+              <palette>
+               <active>
+                <colorrole role="HighlightedText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>17</red>
+                   <green>74</green>
+                   <blue>141</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </active>
+               <inactive>
+                <colorrole role="HighlightedText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>17</red>
+                   <green>74</green>
+                   <blue>141</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </inactive>
+               <disabled>
+                <colorrole role="HighlightedText">
+                 <brush brushstyle="SolidPattern">
+                  <color alpha="255">
+                   <red>17</red>
+                   <green>74</green>
+                   <blue>141</blue>
+                  </color>
+                 </brush>
+                </colorrole>
+               </disabled>
+              </palette>
+             </property>
+             <property name="toolTip">
+              <string>&lt;p&gt;Процесс скачивания архива из ресурса.&lt;/p&gt;</string>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">selection-color: rgb(17, 74, 141);</string>
+             </property>
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="value">
+              <number>24</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QProgressBar" name="progressBar">
+             <property name="toolTip">
+              <string>&lt;p&gt;Состояние выполняемого процесса.&lt;/p&gt;</string>
+             </property>
+             <property name="maximum">
+              <number>100</number>
+             </property>
+             <property name="value">
+              <number>24</number>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>441</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Операции</string>
+    </property>
+    <addaction name="action_import"/>
+    <addaction name="action_refresh"/>
+    <addaction name="action_clean"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <action name="action_import">
+   <property name="text">
+    <string>Импортировать в Forefront TMG</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;p&gt;Выполняем удаление старых листов, скачивание архива из интернета, парсинг файлов с чёрными листами, создание XML и импорт в TMG&lt;/p&gt;</string>
+   </property>
+  </action>
+  <action name="action_refresh">
+   <property name="text">
+    <string>Обновить</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;p&gt;Подкачка содержащихся в указанном правиле списков, очистка поля Операции&lt;/p&gt;</string>
+   </property>
+  </action>
+  <action name="action_clean">
+   <property name="text">
+    <string>Удалить из Forefront TMG</string>
+   </property>
+   <property name="toolTip">
+    <string>&lt;p&gt;Удаление по указанному префиксу списоков из указанного правила и наборов доменных имён&lt;/p&gt;</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>action_clean</sender>
+   <signal>triggered()</signal>
+   <receiver>AutoUploadTMG</receiver>
+   <slot>start_thread_clean()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>220</x>
+     <y>387</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>choice_ruleName</sender>
+   <signal>activated(QString)</signal>
+   <receiver>AutoUploadTMG</receiver>
+   <slot>start_refresh_information()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>272</x>
+     <y>141</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>440</x>
+     <y>231</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_import</sender>
+   <signal>triggered()</signal>
+   <receiver>AutoUploadTMG</receiver>
+   <slot>start_thread_import()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>220</x>
+     <y>387</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_refresh</sender>
+   <signal>triggered()</signal>
+   <receiver>AutoUploadTMG</receiver>
+   <slot>start_refresh_information()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>220</x>
+     <y>387</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>shallalist_check</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>AutoUploadTMG</receiver>
+   <slot>can_choice_action()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>377</x>
+     <y>83</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>220</x>
+     <y>387</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>digincore_check</sender>
+   <signal>stateChanged(int)</signal>
+   <receiver>AutoUploadTMG</receiver>
+   <slot>can_choice_action()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>378</x>
+     <y>111</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>220</x>
+     <y>387</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>start_refresh_information()</slot>
+  <slot>start_thread_clean()</slot>
+  <slot>start_thread_import()</slot>
+  <slot>can_choice_action()</slot>
+ </slots>
+</ui>

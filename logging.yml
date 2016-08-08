@@ -1,0 +1,19 @@
+version: 1
+disable_existing_loggers: False
+formatters:
+  console_formatter: {format: '%(levelname)-10s %(asctime)s MODULE NAME: %(module)s FUNCTION: %(funcName)s LINE NO: %(lineno)s %(message)s'}
+  info_formatter: {format: '%(levelname)-10s %(asctime)s MODULE NAME: %(module)s %(message)s'}
+handlers:
+  console:
+    class: logging.StreamHandler
+    formatter: console_formatter
+    level: DEBUG
+  logfile_info:
+    class: logging.FileHandler
+    formatter: info_formatter
+    filename: logfile_info.log
+    encoding: UTF-8
+    level: INFO
+root:
+  level: DEBUG
+  handlers: [logfile_info, console]
